@@ -139,9 +139,9 @@ class Game{
       }
 
 gameOver() {
+    push();
     textSize(40)
     fill("cyan");
-    push();
     textAlign("center");
  text("FIM DE JOGO!", displayWidth / 2, displayHeight / 2 - 200)
  pop();
