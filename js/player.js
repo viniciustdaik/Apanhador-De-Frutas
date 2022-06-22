@@ -9,20 +9,20 @@ class Player {
     }
 
     getCount() {
-        var playerCountRef = database.ref('playerCount');
+        var playerCountRef = database.ref('/Apanhador De Frutas/playerCount');
         playerCountRef.on("value", (data) => {
             playerCount = data.val();
         })
     }
 
     updateCount(count) {
-        database.ref('/').update({
+        database.ref('/Apanhador De Frutas/').update({
             playerCount: count
         });
     }
 
     update() {
-        var playerIndex = "players/player" + this.index;
+        var playerIndex = "/Apanhador De Frutas/players/player" + this.index;
         database.ref(playerIndex).set({
             name: this.name,
             distance: this.distance,
@@ -31,20 +31,20 @@ class Player {
     }
 
     static getPlayerInfo() {
-        var playerInfoRef = database.ref('players');
+        var playerInfoRef = database.ref('/Apanhador De Frutas/players');
         playerInfoRef.on("value", (data) => {
             allPlayers = data.val();
         })
     }
 
     getPlayerAtEnd(){
-        database.ref('playerAtEnd').on("value",(data)=>{
+        database.ref('/Apanhador De Frutas/playerAtEnd').on("value",(data)=>{
             this.rank = data.val();
         })
     }
 
     static updatePlayerAtEnd(rank){
-        database.ref("/").update({
+        database.ref("/Apanhador De Frutas/").update({
             playerAtEnd : rank
         })
     }
