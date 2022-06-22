@@ -3,7 +3,7 @@ class Game{
 
     }
     getState() {
-        var gameStateRef = database.ref('gameState');
+        var gameStateRef = database.ref('/Apanhador De Frutas/gameState');
         gameStateRef.on("value", function (data) {
             gameState = data.val();
         })
@@ -11,14 +11,14 @@ class Game{
     }
 
     update(state) {
-        database.ref('/').update({
+        database.ref('/Apanhador De Frutas/').update({
             gameState: state
         });
     }
     async start() {
             if (gameState === 0) {
                 player = new Player();
-                var playerCountRef = await database.ref('playerCount').once("value");
+                var playerCountRef = await database.ref('/Apanhador De Frutas/playerCount').once("value");
                 if (playerCountRef.exists()) {
                     playerCount = playerCountRef.val();
                     player.getCount();
