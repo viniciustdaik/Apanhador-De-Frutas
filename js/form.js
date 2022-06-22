@@ -75,10 +75,10 @@ class Form{
 
 
 
-            var playerInfoRef = database.ref('players');
+            var playerInfoRef = database.ref('/Apanhador De Frutas/players');
             playerInfoRef.remove();
 
-            var playerAtEndRef = database.ref('playerAtEnd');
+            var playerAtEndRef = database.ref('/Apanhador De Frutas/playerAtEnd');
             playerAtEndRef.remove();
 
             location.reload();
