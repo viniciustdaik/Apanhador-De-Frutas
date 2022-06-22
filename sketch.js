@@ -41,7 +41,9 @@ function setup() {
 
 function draw() {
   background(back_img);
-  
+    if(playerCount === 0 && gameState === 1){
+      game.update(0);
+    }
    if (playerCount === 2) {
      game.update(1);
    }
